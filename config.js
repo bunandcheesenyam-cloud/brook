@@ -33,7 +33,7 @@ module.exports = {
 			password: (process.env.LAVALINK_PASSWORD || process.env.NODE_PASSWORD || "I'm a secret").replace(/["']/g, ""), //- The password of the lavalink server.
 			retryAmount: 200, //- The amount of times to retry connecting to the node if connection got dropped.
 			retryDelay: 40, //- Delay between reconnect attempts if connection is lost.
-			secure: (process.env.LAVALINK_SECURE || process.env.NODE_SECURE) === "true" || (process.env.LAVALINK_SECURE || process.env.NODE_SECURE) === true ? true : false, //- Can be either true or false. Only use true if ssl is enabled!
+			useSSL: (process.env.LAVALINK_SECURE || process.env.NODE_SECURE) === "true" || (process.env.LAVALINK_SECURE || process.env.NODE_SECURE) === true ? true : false, //- Can be either true or false. Only use true if ssl is enabled!
 		},
 	],
 	embedColor: process.env.EMBED_COLOR || "#2f3136", //- Color of the embeds, hex supported
