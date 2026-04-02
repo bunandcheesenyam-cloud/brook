@@ -10,7 +10,7 @@ const { MessageEmbed } = require("discord.js");
 module.exports = async (client, oldState, newState) => {
 	// get guild and player
 	let guildId = newState.guild.id;
-	const player = client.manager.get(guildId);
+	const player = client.manager.players.get(guildId);
 	
 	// check if the bot is active (playing, paused or empty does not matter (return otherwise)
 	if (!player || player.state !== "CONNECTED") {

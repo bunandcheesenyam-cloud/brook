@@ -7,7 +7,7 @@ const { MessageEmbed } = require("discord.js");
 module.exports = async (client, interaction) => {
 	let guild = client.guilds.cache.get(interaction.customId.split(":")[1]);
 	let property = interaction.customId.split(":")[2];
-	let player = client.manager.get(guild.id);
+	let player = client.manager.players.get(guild.id);
 
 	if (!player) {
 		await interaction.reply({
