@@ -29,8 +29,8 @@ module.exports = {
 		{
 			identifier: "Main Node", //- Used for indentifier in stats commands.
 			host: (process.env.LAVALINK_HOST || process.env.NODE_HOST || "lava.link").replace(/["']/g, ""), //- The host name or IP of the lavalink server.
-			port: parseInt((process.env.LAVALINK_PORT || process.env.NODE_PORT || "80").replace(/["']/g, "")), // The port that lavalink is listening to. This must be a number!
-			password: (process.env.LAVALINK_PASSWORD || process.env.NODE_PASSWORD || "I'm a secret").replace(/["']/g, ""), //- The password of the lavalink server.
+			password: (process.env.LAVALINK_PASSWORD || process.env.NODE_PASSWORD || "retro2cool!").replace(/["']/g, ""), //- The password of the lavalink server.
+			port: parseInt((process.env.LAVALINK_PORT || process.env.NODE_PORT || "443").replace(/["']/g, "")), //- Port (default 443 for TLS)
 			retryAmount: 200, //- The amount of times to retry connecting to the node if connection got dropped.
 			retryDelay: 40, //- Delay between reconnect attempts if connection is lost.
 			useSSL: (process.env.LAVALINK_SECURE || process.env.NODE_SECURE) === "true" || (process.env.LAVALINK_SECURE || process.env.NODE_SECURE) === true ? true : false, //- Can be either true or false. Only use true if ssl is enabled!

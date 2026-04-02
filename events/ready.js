@@ -7,9 +7,9 @@ const LoadCommands = require("../util/loadCommands");
  * @param {import("../lib/DiscordMusicBot")} client
  */
 module.exports = async (client) => {
-	client.manager.init(client.user.id);
 	client.user.setPresence(client.config.presence);
 	client.log("Successfully Logged in as " + client.user.tag);
+	client.manager.init(client.user.id); // still required to trigger node connection
 
 	client.log("Auto-deploying slash commands to Discord...");
 	try {
