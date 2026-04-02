@@ -1,6 +1,5 @@
-FROM node:17.9.1-alpine
+FROM node:18-alpine
 WORKDIR /usr/src/app
 COPY . .
 RUN npm install
-RUN npm run deploy
 CMD [ "node", "index.js" ]
