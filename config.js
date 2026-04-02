@@ -28,12 +28,12 @@ module.exports = {
 	nodes: [
 		{
 			identifier: "Main Node", //- Used for indentifier in stats commands.
-			host: process.env.LAVALINK_HOST || "", //- The host name or IP of the lavalink server.
-			port: parseInt(process.env.LAVALINK_PORT) || 80, // The port that lavalink is listening to. This must be a number!
-			password: process.env.LAVALINK_PASSWORD || "", //- The password of the lavalink server.
+			host: (process.env.LAVALINK_HOST || process.env.NODE_HOST || "lava.link").replace(/["']/g, ""), //- The host name or IP of the lavalink server.
+			port: parseInt((process.env.LAVALINK_PORT || process.env.NODE_PORT || "80").replace(/["']/g, "")), // The port that lavalink is listening to. This must be a number!
+			password: (process.env.LAVALINK_PASSWORD || process.env.NODE_PASSWORD || "I'm a secret").replace(/["']/g, ""), //- The password of the lavalink server.
 			retryAmount: 200, //- The amount of times to retry connecting to the node if connection got dropped.
 			retryDelay: 40, //- Delay between reconnect attempts if connection is lost.
-			secure: process.env.LAVALINK_SECURE === "true" ? true : false, //- Can be either true or false. Only use true if ssl is enabled!
+			secure: (process.env.LAVALINK_SECURE || process.env.NODE_SECURE) === "true" || (process.env.LAVALINK_SECURE || process.env.NODE_SECURE) === true ? true : false, //- Can be either true or false. Only use true if ssl is enabled!
 		},
 	],
 	embedColor: process.env.EMBED_COLOR || "#2f3136", //- Color of the embeds, hex supported
