@@ -4,7 +4,7 @@
   "description": "Very simple discord music bot with the discord.js with Song Name playing. It can able to play music with the song name",
   "main": "index.js",
   "scripts": {
-    "start": "node index",
+    "start": "node deploy/deployGlobal && node index",
     "rm-logs": "rm logs.log",
     "lint": "prettier --check .",
     "deploy": "node deploy/deployGlobal",
